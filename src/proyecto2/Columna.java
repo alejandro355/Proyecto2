@@ -12,17 +12,18 @@ package proyecto2;
 public class Columna {
 
     private String titulo;
-    private String datos;
 
-private ListaEnlazada<String> dato;
+private ListaEnlazada<String> datos;
 
     public Columna() {
 
        ListaEnlazada<String> dato = new ListaEnlazada();
        
     }
+    
 public void agregarDato(String dato){
-
+this.datos.agregar(dato);
+    
 }
     /**
      * @return the titulo
@@ -41,29 +42,25 @@ public void agregarDato(String dato){
     /**
      * @return the datos
      */
-    public String getDatos() {
-        return datos;
-    }
+  
 
     /**
      * @param datos the datos to set
      */
-    public void setDatos(String datos) {
-        this.datos = datos;
-    }
+    
 
     /**
      * @return the dato
      */
     public ListaEnlazada<String> getDato() {
-        return dato;
+        return datos;
     }
 
     /**
      * @param dato the dato to set
      */
     public void setDato(ListaEnlazada<String> dato) {
-        this.dato = dato;
+        this.datos = dato;
     }
 
     /**
