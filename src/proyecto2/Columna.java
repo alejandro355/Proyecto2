@@ -5,6 +5,8 @@
  */
 package proyecto2;
 
+import Listas.ListaEnlazada;
+
 /**
  *
  * @author Alejandro
@@ -13,23 +15,25 @@ public class Columna {
 
     private String titulo;
 
-private ListaEnlazada<String> datos;
+    private ListaEnlazada<String> datos;
 
     public Columna() {
 
-       ListaEnlazada<String> dato = new ListaEnlazada();
-       
+        datos = new ListaEnlazada();
+
     }
-    
+
     public Columna(String titulo) {
-this.titulo=titulo;
-       
+        this.titulo = titulo;
+        datos= new ListaEnlazada();
+
     }
-    
-public void agregarDato(String dato){
-this.datos.agregar(dato);
-    
-}
+
+    public void agregarDato(String dato) {
+        this.datos.agregar(dato);
+
+    }
+
     /**
      * @return the titulo
      */
@@ -47,13 +51,9 @@ this.datos.agregar(dato);
     /**
      * @return the datos
      */
-  
-
     /**
      * @param datos the datos to set
      */
-    
-
     /**
      * @return the dato
      */
@@ -71,5 +71,4 @@ this.datos.agregar(dato);
     /**
      * @return the columnas
      */
-    
 }

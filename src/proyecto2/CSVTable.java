@@ -9,6 +9,7 @@ package proyecto2;
  *
  * @author Alejandro
  */
+import Listas.ListaEnlazada;
 import java.awt.BorderLayout;
 import java.io.*;
  import java.net.URL;
@@ -138,6 +139,7 @@ void insertData(InputStream is) {
         		actual= columna.obtenerIndice(i);
         		actual.agregarDato(array[i]);
 
+
         	}
 
         	model.addRow(data);
@@ -146,8 +148,7 @@ void insertData(InputStream is) {
 
 
         }
-contador++;
-    }
+    contador++;}
     table.setModel(model);
 } 
 
