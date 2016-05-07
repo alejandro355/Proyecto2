@@ -21,6 +21,11 @@ private ListaEnlazada<String> datos;
        
     }
     
+    public Columna(String titulo) {
+this.titulo=titulo;
+       
+    }
+    
 public void agregarDato(String dato){
 this.datos.agregar(dato);
     
