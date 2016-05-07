@@ -14,16 +14,15 @@ public class Columna {
     private String titulo;
     private String datos;
 
-    private ListaEnlazada<Columna> columnas;
+private ListaEnlazada<String> dato;
 
     public Columna() {
 
-       ListaEnlazada<String> datos;
+       ListaEnlazada<String> dato = new ListaEnlazada();
        
     }
 public void agregarDato(String dato){
 
-datos.
 }
     /**
      * @return the titulo
@@ -54,16 +53,21 @@ datos.
     }
 
     /**
-     * @return the columnas
+     * @return the dato
      */
-    public ListaEnlazada<Columna> getColumnas() {
-        return columnas;
+    public ListaEnlazada<String> getDato() {
+        return dato;
     }
 
     /**
-     * @param columnas the columnas to set
+     * @param dato the dato to set
      */
-    public void setColumnas(ListaEnlazada<Columna> columnas) {
-        this.columnas = columnas;
+    public void setDato(ListaEnlazada<String> dato) {
+        this.dato = dato;
     }
+
+    /**
+     * @return the columnas
+     */
+    
 }
