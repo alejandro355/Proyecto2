@@ -22,8 +22,10 @@ public class Dashboard {
     JButton abrir = new JButton("Abrir");
     JPanel pPie, pBarra, pLinea, pReporte, pPreview;
     JButton bPie, bBarra, bLinea, a;
-    JLabel lCombo = new JLabel("REPORTES");
-    JComboBox combo = new JComboBox();
+    JLabel lMetrica = new JLabel("METRICA");
+    JLabel lModelo = new JLabel("MODELO");
+    JComboBox cModelo = new JComboBox();
+    JComboBox cMetrica = new JComboBox();
     ImageIcon iPie = new ImageIcon("pie.png");
     ImageIcon iBarra = new ImageIcon("barra.png");
     ImageIcon iLinea = new ImageIcon("linea.jpg");
@@ -31,7 +33,7 @@ public class Dashboard {
 
     public Dashboard() {
 
-        ventana.setBounds(10, 10, 600, 600);
+        ventana.setBounds(10, 10, 600, 650);
         ventana.setLayout(null);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -70,12 +72,12 @@ public class Dashboard {
         pLinea.setVisible(true);
 
         pReporte = new JPanel();
-        pReporte.setBounds(20, 235, 240, 300);
+        pReporte.setBounds(20, 280, 240, 300);
         pReporte.setLayout(null);
         pReporte.setVisible(true);
         
         pPreview = new JPanel();
-        pPreview.setBounds(300, 235, 240, 300);
+        pPreview.setBounds(300, 280, 240, 300);
         pPreview.setLayout(null);
         pPreview.setVisible(true);
         
@@ -106,20 +108,28 @@ public class Dashboard {
         //pReporte.add(a);
         pPreview.add(a);
          //Label
-        lCombo.setBounds(20, 200, 160, 25);
-        lCombo.setVisible(true);
+        lMetrica.setBounds(20, 200, 160, 25);
+        lMetrica.setVisible(true);
+        
+        lModelo.setBounds(300, 200, 160, 25);
+        lModelo.setVisible(true);
 
          //Combo
-        combo.setBounds(100, 200, 160, 25);
-        combo.setVisible(true);
+        cModelo.setBounds(20, 235, 160, 25);
+        cModelo.setVisible(true);
+        
+        cMetrica.setBounds(300, 235, 160, 25);
+        cMetrica.setVisible(true);
 
         //Ventana
         ventana.add(abrir);
         ventana.add(pPie);
         ventana.add(pBarra);
         ventana.add(pLinea);
-        ventana.add(lCombo);
-        ventana.add(combo);
+        ventana.add(lMetrica);
+        ventana.add(lModelo);
+        ventana.add(cModelo);
+        ventana.add(cMetrica);
         ventana.add(pReporte);
         ventana.add(pPreview);
         ventana.setVisible(true);
@@ -132,7 +142,8 @@ public class Dashboard {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getSource() == abrir) {
-                CSVTable csv = new CSVTable();
+                nVentana n = new nVentana();
+                n.abrir();
 
             }
 

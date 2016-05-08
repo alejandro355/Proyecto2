@@ -158,8 +158,8 @@ public class CSVTable extends JFrame {
     }
 
     public static void main(String args[]) {
-        CSVTable frame = new CSVTable("Tabla", csvRuta);
+      /*  CSVTable frame = new CSVTable("Tabla", csvRuta);
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
     }
 }
