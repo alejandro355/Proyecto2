@@ -20,7 +20,7 @@ public class Dashboard {
     //JMenu inicio = new JMenu("Inicio");
     JFrame ventana = new JFrame();
     JButton abrir = new JButton("Abrir");
-    JPanel pPie, pBarra, pLinea, pReporte;
+    JPanel pPie, pBarra, pLinea, pReporte, pPreview;
     JButton bPie, bBarra, bLinea, a;
     JLabel lCombo = new JLabel("REPORTES");
     JComboBox combo = new JComboBox();
@@ -31,7 +31,7 @@ public class Dashboard {
 
     public Dashboard() {
 
-        ventana.setBounds(10, 10, 500, 600);
+        ventana.setBounds(10, 10, 600, 600);
         ventana.setLayout(null);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -70,9 +70,14 @@ public class Dashboard {
         pLinea.setVisible(true);
 
         pReporte = new JPanel();
-        pReporte.setBounds(20, 230, 240, 300);
+        pReporte.setBounds(20, 235, 240, 300);
         pReporte.setLayout(null);
         pReporte.setVisible(true);
+        
+        pPreview = new JPanel();
+        pPreview.setBounds(300, 235, 240, 300);
+        pPreview.setLayout(null);
+        pPreview.setVisible(true);
         
         //Botones
         bPie = new JButton();
@@ -90,16 +95,16 @@ public class Dashboard {
         bLinea.setIcon(iLinea);
         bLinea.setVisible(true);
         
-        /*a = new JButton();
+        a = new JButton();
         a.setBounds(0, 0, 240, 300);
-        a.setVisible(true);*/
+        a.setVisible(true);
 
         //Panel Add
         pPie.add(bPie);
         pBarra.add(bBarra);
         pLinea.add(bLinea);
         //pReporte.add(a);
-
+        pPreview.add(a);
          //Label
         lCombo.setBounds(20, 200, 160, 25);
         lCombo.setVisible(true);
@@ -116,6 +121,7 @@ public class Dashboard {
         ventana.add(lCombo);
         ventana.add(combo);
         ventana.add(pReporte);
+        ventana.add(pPreview);
         ventana.setVisible(true);
 
     }
