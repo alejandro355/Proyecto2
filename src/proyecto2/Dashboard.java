@@ -19,6 +19,11 @@ public class Dashboard {
     JMenuBar menu = new JMenuBar();
     //JMenu inicio = new JMenu("Inicio");
     JFrame ventana = new JFrame();
+    JMenu Archivo = new JMenu("Archivo");
+    JMenu Modelo = new JMenu("Modelo");
+    // JMenu operaciones =new JMenu("Operaciones");
+    JMenuItem edicion, formato, jGbinario, jGcomo, jNmodelo, jCmodelo, jGmodelo;
+
     JButton abrir = new JButton("Abrir");
     JPanel pPie, pBarra, pLinea, pReporte, pPreview;
     JButton bPie, bBarra, bLinea, a;
@@ -37,12 +42,38 @@ public class Dashboard {
         ventana.setLayout(null);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        //Menu
+        menu.add(Archivo);
+        menu.add(Modelo);
+   //menu.add(operaciones);
+
+        // Archivo
+        edicion = new JMenuItem("Cargar archivo .csv");
+        formato = new JMenuItem("Cargar archivo binario");
+        jGbinario = new JMenuItem("Guardar archivo binario");
+        jGcomo = new JMenuItem("Guardar como:");
+
+        //Modelo
+        jNmodelo = new JMenuItem("Nuevo modelo");
+        jCmodelo = new JMenuItem("Cambiar modelo");
+        jGmodelo = new JMenuItem("Guardar Modelo");
+
+        // Agregar a Menu
+        Archivo.add(edicion);
+        Archivo.add(formato);
+        Archivo.add(jGbinario);
+        Archivo.add(jGcomo);
+
+        Modelo.add(jNmodelo);
+        Modelo.add(jCmodelo);
+        Modelo.add(jGmodelo);
+
         //Abrir
         abrir.setBounds(20, 20, 90, 30);
         abrir.setVisible(true);
         abrir.addActionListener(handler);
 
-         // Iconos
+        // Iconos
         Image img = iPie.getImage();
         Image newimg = img.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
         iPie = new ImageIcon(newimg);
@@ -75,12 +106,12 @@ public class Dashboard {
         pReporte.setBounds(20, 280, 240, 300);
         pReporte.setLayout(null);
         pReporte.setVisible(true);
-        
+
         pPreview = new JPanel();
         pPreview.setBounds(300, 280, 240, 300);
         pPreview.setLayout(null);
         pPreview.setVisible(true);
-        
+
         //Botones
         bPie = new JButton();
         bPie.setBounds(0, 0, 100, 100);
@@ -96,7 +127,7 @@ public class Dashboard {
         bLinea.setBounds(0, 0, 100, 100);
         bLinea.setIcon(iLinea);
         bLinea.setVisible(true);
-        
+
         a = new JButton();
         a.setBounds(0, 0, 240, 300);
         a.setVisible(true);
@@ -105,21 +136,25 @@ public class Dashboard {
         pPie.add(bPie);
         pBarra.add(bBarra);
         pLinea.add(bLinea);
+        
         //pReporte.add(a);
         pPreview.add(a);
-         //Label
+        
+        //Label
         lMetrica.setBounds(20, 200, 160, 25);
         lMetrica.setVisible(true);
-        
+
         lModelo.setBounds(300, 200, 160, 25);
         lModelo.setVisible(true);
 
-         //Combo
+        //Combo
         cModelo.setBounds(20, 235, 160, 25);
         cModelo.setVisible(true);
-        
+
         cMetrica.setBounds(300, 235, 160, 25);
         cMetrica.setVisible(true);
+        
+        
 
         //Ventana
         ventana.add(abrir);
@@ -132,6 +167,7 @@ public class Dashboard {
         ventana.add(cMetrica);
         ventana.add(pReporte);
         ventana.add(pPreview);
+        ventana.setJMenuBar(menu);
         ventana.setVisible(true);
 
     }

@@ -11,6 +11,8 @@ package proyecto2;
  */
 import Listas.ListaEnlazada;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.URL;
 import java.util.Scanner;
@@ -23,7 +25,6 @@ public class CSVTable extends JFrame {
     JTable table;
     DefaultTableModel model;
     JButton closeButton, webButton;
-
     ListaEnlazada<Columna> columna;
 
     /**
@@ -37,7 +38,9 @@ public class CSVTable extends JFrame {
 
     private String csvRuta = "";
     int i = 0;
-
+//Handler
+        
+        
     public void abrirCSV() {
 
         JFileChooser fileChooser = new JFileChooser();

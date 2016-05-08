@@ -102,6 +102,15 @@ cLinea.setVisible(true);
                 
             }
 
+            if (e.getSource() == guardar) {
+                
+                 nuevo1.dispose();
+            }
+            
+             if (e.getSource() == cancelar) {
+               
+                  nuevo1.dispose();
+            }
         }
 
     }
