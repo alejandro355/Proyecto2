@@ -33,7 +33,7 @@ public class Pila <T> {
         if (isEmpty() || indice < 0) {
             return null;
         } else {
-            Nodo actual = inicio;
+            Nodo actual = cabeza;
             int i = 0;
 
             for (i = 0; indice > i && actual.getSiguiente() != null; i++) {
