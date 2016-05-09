@@ -30,9 +30,15 @@ public class Pila <T> {
      
      
      public T pop() {
+                  
         Nodo retorno = this.getCabeza();
+        if(retorno==null){
+        return null;
+        }
+        else
+        
         this.setCabeza(retorno.getSiguiente());
-        return (T) retorno;
+        return (T) retorno.getObjeto();
     }
      
      

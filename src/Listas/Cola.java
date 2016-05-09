@@ -35,9 +35,15 @@ public class Cola <T>{
     }
 
     public T pop() {
+        
         Nodo retorno = this.getCabeza();
+        
+        if(retorno==null){
+        return null;
+        }
+        
         this.setCabeza(retorno.getSiguiente());
-        return (T) retorno;
+        return (T) retorno.getObjeto();
     }
     /**
      * @return the cabeza

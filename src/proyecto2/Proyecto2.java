@@ -5,6 +5,7 @@
  */
 package proyecto2;
 
+import Listas.Cola;
 import Listas.Pila;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -48,7 +49,14 @@ catch (Exception e)
         pila.push(nombre2);
         pila.push(nombre3);
         
-       System.out.println(pila.pop()); 
+        Cola <String> cola = new Cola();
+        cola.push(nombre);
+        cola.push(nombre2);
+        cola.push(nombre3);
+       System.out.println(cola.pop()); 
+       System.out.println(cola.pop()); 
+       System.out.println(cola.pop()); 
+       System.out.println(cola.pop()); 
        
         Dashboard dash = new Dashboard();
     }
