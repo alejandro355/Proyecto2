@@ -11,7 +11,7 @@ package Listas;
  */
 public class ListaEnlazada<T> {
 
-    Nodo1 inicio;
+    Nodo inicio;
 
     public ListaEnlazada() {
 
@@ -20,9 +20,9 @@ public class ListaEnlazada<T> {
     }
 
     public boolean agregar(T objeto) {
-        Nodo1 nuevo;
+        Nodo nuevo;
 
-        nuevo = new Nodo1(objeto);
+        nuevo = new Nodo(objeto);
 
         if (esVacia()) {
             inicio = nuevo;
@@ -51,7 +51,7 @@ public class ListaEnlazada<T> {
         if (esVacia() || indice < 0) {
             return null;
         } else {
-            Nodo1 actual = inicio;
+            Nodo actual = inicio;
             int i = 0;
 
             for (i = 0; indice > i && actual.getSiguiente() != null; i++) {
@@ -77,7 +77,7 @@ public class ListaEnlazada<T> {
                 
             }else{
                 indice--;
-                Nodo1 actual = inicio;
+                Nodo actual = inicio;
                 int i = 0, contador=0;
 
                 for (i = 0; indice > i && actual.getSiguiente() != null; i++) {

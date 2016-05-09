@@ -9,14 +9,15 @@ package Listas;
  *
  * @author danielherrerahernandez
  */
-public  class Nodo1  {
+public  class Nodo  {
     
     private  Object objeto;
     
-    private Nodo1 siguiente;
+    private Nodo siguiente;
     
+   
     
-    public Nodo1(Object objeto){
+    public Nodo(Object objeto){
         this.objeto= objeto;
         
     }
@@ -26,12 +27,12 @@ public  class Nodo1  {
         return this.objeto;
     }
     
-    public void setSiguiente(Nodo1 siguiente){
+    public void setSiguiente(Nodo siguiente){
         this.siguiente= siguiente;
         
     }
     
-    public Nodo1 getSiguiente(){
+    public Nodo getSiguiente(){
         return siguiente;
         
     }
