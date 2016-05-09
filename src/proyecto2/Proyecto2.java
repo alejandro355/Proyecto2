@@ -39,11 +39,11 @@ catch (Exception e)
   e.printStackTrace();
  }
         
-        String nombre = ("Daniel1");
-        String nombre2= ("Alejandro2");
-        String nombre3 = ("Herrera3");
+        String nombre = new String("Daniel1");
+        String nombre2= new String("Alejandro2");
+        String nombre3 = new String("Herrera3");
         
-        Pila pila = new Pila();
+        Pila <String> pila =  new Pila();
         pila.push(nombre);
         pila.push(nombre2);
         pila.push(nombre3);
