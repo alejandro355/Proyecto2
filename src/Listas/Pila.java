@@ -9,7 +9,7 @@ package Listas;
  *
  * @author Alejandro
  */
-public class Pila {
+public class Pila <T> {
     private Nodo cabeza;
     
     public Pila(){
@@ -17,17 +17,35 @@ public class Pila {
     
     }
 
-     public void push(Object objeto) {
+     public void push(T objeto) {
         Nodo nuevo = new Nodo(objeto);
         if (isEmpty()) {
             setCabeza(nuevo);
         } else {
-            Nodo actual = this.getCabeza();
-            while (actual.getSiguiente() != null) {
-                actual = actual.getSiguiente();
-            }
-            actual.setSiguiente(nuevo);
+            nuevo.setSiguiente(cabeza);
+            setCabeza(nuevo);
+            
         }
+    }
+     
+      public T obtenerIndice(int indice) {
+
+        if (isEmpty() || indice < 0) {
+            return null;
+        } else {
+            Nodo actual = inicio;
+            int i = 0;
+
+            for (i = 0; indice > i && actual.getSiguiente() != null; i++) {
+
+                actual = actual.getSiguiente();
+
+            }
+
+            return (T) actual.getObjeto();
+
+        }
+
     }
     
      public Nodo pop() {
@@ -36,13 +54,7 @@ public class Pila {
         return retorno;
     }
      
-      public void visualizar() {
-        Nodo actual;
-        for (actual = this.getCabeza(); actual != null; actual = actual.getSiguiente()) {
-            System.out.println("Dato: " + actual.getObjeto());
-            System.out.println("");
-        }
-    }
+     
      
     public boolean isEmpty() {
         if (getCabeza() == null) {

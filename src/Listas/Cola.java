@@ -11,4 +11,18 @@ package Listas;
  */
 public class Cola {
     
+    
+    ublic void push(T objeto) {
+        Nodo nuevo = new Nodo(objeto);
+        if (isEmpty()) {
+            setCabeza(nuevo);
+        } else {
+            
+            Nodo actual = this.getCabeza();
+            while (actual.getSiguiente() != null) {
+                actual = actual.getSiguiente();
+            }
+            actual.setSiguiente(nuevo);
+        }
+    }
 }
