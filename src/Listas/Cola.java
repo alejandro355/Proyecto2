@@ -9,10 +9,18 @@ package Listas;
  *
  * @author Alejandro
  */
-public class Cola {
+public class Cola <T>{
+    private Nodo cabeza;
     
     
-    ublic void push(T objeto) {
+    public boolean isEmpty() {
+        if (getCabeza() == null) {
+            return true;
+        }
+        return false;
+    }
+    
+    public void push(T objeto) {
         Nodo nuevo = new Nodo(objeto);
         if (isEmpty()) {
             setCabeza(nuevo);
@@ -24,5 +32,24 @@ public class Cola {
             }
             actual.setSiguiente(nuevo);
         }
+    }
+
+    public T pop() {
+        Nodo retorno = this.getCabeza();
+        this.setCabeza(retorno.getSiguiente());
+        return (T) retorno;
+    }
+    /**
+     * @return the cabeza
+     */
+    public Nodo getCabeza() {
+        return cabeza;
+    }
+
+    /**
+     * @param cabeza the cabeza to set
+     */
+    public void setCabeza(Nodo cabeza) {
+        this.cabeza = cabeza;
     }
 }

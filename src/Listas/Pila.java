@@ -28,30 +28,11 @@ public class Pila <T> {
         }
     }
      
-      public T obtenerIndice(int indice) {
-
-        if (isEmpty() || indice < 0) {
-            return null;
-        } else {
-            Nodo actual = cabeza;
-            int i = 0;
-
-            for (i = 0; indice > i && actual.getSiguiente() != null; i++) {
-
-                actual = actual.getSiguiente();
-
-            }
-
-            return (T) actual.getObjeto();
-
-        }
-
-    }
-    
-     public Nodo pop() {
+     
+     public T pop() {
         Nodo retorno = this.getCabeza();
         this.setCabeza(retorno.getSiguiente());
-        return retorno;
+        return (T) retorno;
     }
      
      
