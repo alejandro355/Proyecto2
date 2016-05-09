@@ -5,6 +5,7 @@
  */
 package proyecto2;
 
+import Binario.bits;
 import Listas.Cola;
 import Listas.Pila;
 import javax.swing.JDialog;
@@ -57,7 +58,8 @@ catch (Exception e)
        System.out.println(cola.pop()); 
        System.out.println(cola.pop()); 
        System.out.println(cola.pop()); 
-       
+       bits b = new bits();
+        b.escribir();    
         Dashboard dash = new Dashboard();
     }
     
