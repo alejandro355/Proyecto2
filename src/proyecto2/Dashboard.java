@@ -5,6 +5,7 @@
  */
 package proyecto2;
 
+import Binario.abrir;
 import java.awt.Image;
 import java.awt.event.*;
 import javax.swing.*;
@@ -22,7 +23,7 @@ public class Dashboard {
     JMenu Archivo = new JMenu("Archivo");
     JMenu Modelo = new JMenu("Modelo");
     // JMenu operaciones =new JMenu("Operaciones");
-    JMenuItem edicion, formato, jGbinario, jGcomo, jNmodelo, jCmodelo, jGmodelo;
+    JMenuItem cargarCSV, cargarBinario, jGbinario, jGcomo, jNmodelo, jCmodelo, jGmodelo;
 
     JButton abrir = new JButton("Abrir");
     JPanel pPie, pBarra, pLinea, pReporte, pPreview;
@@ -48,8 +49,8 @@ public class Dashboard {
    //menu.add(operaciones);
 
         // Archivo
-        edicion = new JMenuItem("Cargar archivo .csv");
-        formato = new JMenuItem("Cargar archivo binario");
+        cargarCSV = new JMenuItem("Cargar archivo .csv");
+        cargarBinario = new JMenuItem("Cargar archivo binario");
         jGbinario = new JMenuItem("Guardar archivo binario");
         jGcomo = new JMenuItem("Guardar como:");
 
@@ -59,8 +60,8 @@ public class Dashboard {
         jGmodelo = new JMenuItem("Guardar Modelo");
 
         // Agregar a Menu
-        Archivo.add(edicion);
-        Archivo.add(formato);
+        Archivo.add(cargarCSV);
+        Archivo.add(cargarBinario);
         Archivo.add(jGbinario);
         Archivo.add(jGcomo);
 
@@ -71,7 +72,16 @@ public class Dashboard {
         //Abrir
         abrir.setBounds(20, 20, 90, 30);
         abrir.setVisible(true);
+        
+        //Handler
         abrir.addActionListener(handler);
+        cargarCSV.addActionListener(handler);
+        cargarBinario.addActionListener(handler);
+        jGbinario.addActionListener(handler);
+        jGcomo.addActionListener(handler);
+        jNmodelo.addActionListener(handler);
+        jCmodelo.addActionListener(handler);
+        jGmodelo.addActionListener(handler);
 
         // Iconos
         Image img = iPie.getImage();
@@ -179,7 +189,9 @@ public class Dashboard {
 
             if (e.getSource() == abrir) {
                 nVentana n = new nVentana();
-                n.abrir();
+                abrir a = new abrir();
+                //n.abrir();
+                a.gArchivo();
 
             }
 
